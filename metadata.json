@@ -1,0 +1,5 @@
+{
+  "name": "AI Micro-Learning Flashcards",
+  "description": "Upload a book or text file and this application will generate swipeable, bite-sized flashcards for micro-learning. Each swipe generates a new, unique card from the text, and your progress is saved automatically.",
+  "requestFramePermissions": []
+}

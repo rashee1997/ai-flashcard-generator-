@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Micro-Learning Flashcards</title>
+    <!-- pdf.js library and worker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+    <script>
+      // Required for pdf.js to work
+      if (typeof pdfjsLib !== 'undefined') {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';
+      }
+    </script>
+    <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+        "react/": "https://aistudiocdn.com/react@^19.1.1/",
+        "react": "https://aistudiocdn.com/react@^19.1.1",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.21.0",
+        "mammoth": "https://cdn.jsdelivr.net/npm/mammoth@1.8.0/+esm",
+        "marked": "https://cdn.jsdelivr.net/npm/marked@13.0.1/+esm"
+      }
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              'swipe-out-right': {
+                'from': { opacity: 1, transform: 'translate(0) rotate(0)' },
+                'to': { opacity: 0, transform: 'translate(200%) rotate(25deg)' },
+              },
+              'swipe-out-left': {
+                'from': { opacity: 1, transform: 'translate(0) rotate(0)' },
+                'to': { opacity: 0, transform: 'translate(-200%) rotate(-25deg)' },
+              },
+              'pop-in': {
+                'from': { transform: 'scale(0.9)', opacity: 0 },
+                'to': { transform: 'scale(1)', opacity: 1 },
+              },
+            },
+            animation: {
+              'swipe-out-right': 'swipe-out-right 0.5s ease-out forwards',
+              'swipe-out-left': 'swipe-out-left 0.5s ease-out forwards',
+              'pop-in': 'pop-in 0.3s ease-out forwards',
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-slate-900 text-slate-100">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
